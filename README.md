@@ -53,13 +53,12 @@ Python 3.12; the Docker image uses a non-root user with UID/GID 10001.
 
 ## Quick start
 
-The initial MVP is on the `initial-mvp` branch pending its first release.
-After a release is published, use a chosen release tag for a stable deployment.
+The initial MVP is on the `main` branch, use a chosen release tag for a stable deployment.
 
 ```sh
 git clone https://github.com/carlbme/emby-search.git
 cd emby-search
-git checkout initial-mvp
+git checkout main
 cp .env.example .env
 chmod 600 .env
 docker compose build
