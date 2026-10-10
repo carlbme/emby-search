@@ -1,0 +1,7 @@
+*
+!portal/
+!portal/**
+!deploy/
+!deploy/Dockerfile
+portal/**/__pycache__
+portal/**/*.pyc

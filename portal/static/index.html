@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Search · Emby Search</title>
+  <link rel="stylesheet" href="/assets/portal.css">
+  <script src="/assets/portal.js" defer></script>
+</head>
+<body>
+  <header><a href="/" class="brand">Emby Search</a><div id="account" hidden><span id="username"></span><button id="logout" class="text-button">Sign out</button></div></header>
+  <main>
+    <h1 aria-label="Search"><span>S</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span></h1>
+    <p class="subtitle">Find your next movie or show.</p>
+    <section id="login-section" hidden>
+      <form id="login-form" class="login">
+        <h2>Sign in with Emby</h2>
+        <label for="login-name">Username</label><input id="login-name" autocomplete="username" maxlength="128" required>
+        <label for="login-password">Password</label><input id="login-password" type="password" autocomplete="current-password" maxlength="1024">
+        <button type="submit" class="primary">Sign in</button>
+        <p class="hint">Use your existing Emby account.</p>
+      </form>
+    </section>
+    <section id="search-section" hidden>
+      <form id="search-form">
+        <fieldset class="types"><legend class="sr-only">What are you looking for?</legend>
+          <label><input type="radio" name="kind" value="movie" checked> Movies</label>
+          <label><input type="radio" name="kind" value="tv"> TV shows</label>
+          <label><input type="radio" name="kind" value="anime"> Anime</label>
+          <label><input type="radio" name="kind" value="cartoons"> Cartoons</label>
+        </fieldset>
+        <div class="searchbox"><span aria-hidden="true">⌕</span><label class="sr-only" for="query">Movie or show title</label><input id="query" name="query" placeholder="Search for a movie or show" maxlength="200" autocomplete="off" required><button type="submit" aria-label="Search">Search</button></div>
+      </form>
+      <p id="busy" class="hint" role="status" hidden>Searching…</p>
+      <div id="results" aria-live="polite"></div>
+      <section id="status" aria-live="polite"></section>
+      <details id="history" hidden><summary>Your earlier requests</summary><div id="history-list"></div></details>
+    </section>
+    <p id="message" role="alert"></p>
+  </main>
+  <footer>Your picks. Your Emby library.</footer>
+</body>
+</html>
